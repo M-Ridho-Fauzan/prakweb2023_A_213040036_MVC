@@ -60,7 +60,7 @@ Options -Indexes -> adalah file pemblock agar user tidak bisa memasuki folder ya
 
 Options -Multiviews adalah untuk menghindari kesahan ketika memanggil folder di dalam folder public ini.
 
-<p>RewriteEngine On -> deklarasi menjalankan proses</p>
+<p><code>RewriteEngine On</code> -> deklarasi menjalankan proses</p>
 <p><code>RewriteCond %{REQUEST_FILENAME} !-d</code> -> jika ada reques tentang folder, maka akan di abaikan</p>
 <p><code>RewriteCond %{REQUEST_FILENAME} !-f</code> -> jika ada reques tentang file, maka akan di abaikan</p>
 <p><code>RewriteRule ^(.*)$ index.php?url=$1 [L]</code> -> adalah untuk menulis ulang URL yang ada di browser</p>
