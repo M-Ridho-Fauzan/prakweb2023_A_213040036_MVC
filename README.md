@@ -37,18 +37,23 @@ jadi di sini kita akan memainkan Url dengan Ip.
 <h2>Membuat Aplikasi MVC dengan PHP #2 Persiapan</h2>
 Disini adalah penjelasan tentang Struktur Folder dan File2 apa saja yang akan di gunakan. 
 Struktur folder nya:
-<ul>Public
-  <li>Css</li>
-  <li>Js</li>
-  <li>img</li>
-</ul>
-<ul>App <small>Ini tidak akan di akses oleh user</small>
-  <li>Core<small>Di sini adalah inti dari MVC nya<small></li>
-  <li>Controller</li>
-  <ul>Views <small>Antarmuka sajian controller<small>
-    <li>Home</li>
-    <li>dll...</li>
+<ul>
+  <li>Public</li>
+  <ul>
+    <li>Css</li>
+    <li>Js</li>
+    <li>img</li>
   </ul>
+  <li>App <small>Ini tidak akan di akses oleh user</small></li>
+    <ul>
+      <li>Core<small>Di sini adalah inti dari MVC nya<small></li>
+      <li>Controller</li>
+      <li>Views <small>Antarmuka sajian controller<small></li>
+      <ul>
+        <li>Home</li>
+        <li>dll...</li>
+      </ul>
+    </ul>
 </ul>
 <hr>
 Options -Indexes -> adalah file pemblock agar user tidak bisa memasuki folder yang tida ada file index nya.
