@@ -2,8 +2,11 @@
 
 class About extends Controller
 {
-  public function index($nama = 'Ridho', $pekerjaan = 'Fresh Graduate', $umur = 300)
-  {
+  public function index(
+    $nama = 'Muhamad Ridho Fauzan',
+    $pekerjaan = 'Fresh Graduate',
+    $umur = 20
+  ) {
     // echo 'About/Index';
     // echo "<hr>";
     // echo "Holla, my names is $nama, i'am is $pekerjaan";

@@ -55,6 +55,14 @@ Struktur folder nya:
       </ul>
     </ul>
 </ul>
+
+<h2>Models</h2>
+Models yang di terapkan di sini adalah tempat penyedia data.
+dalam pengertian lain models tidak harus data, tetapi akan luas.
+contoh -> service, object domain, dll 
+intinya bussines logic dari apl yg di buat.
+dan yang paling sederhanya adalah ketika kita sedang mengolah data.
+
 <hr>
 Options -Indexes -> adalah file pemblock agar user tidak bisa memasuki folder yang tida ada file index nya.
 
