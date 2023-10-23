@@ -25,7 +25,7 @@ View = Tampilan
 <h2>Apa yang akan di buat?</h2>
 susah di jelaskan, coba lihat chanel sandika ghalih tentang
 <b>"Membuat Aplikasi MVC dengan PHP #1 Pendahuluan"</b>
-link: <a href="https://youtu.be/tBKOb8Ib5nI?list=PLFIM0718LjIVEh_d-h5wAjsdv2W4SAtkx&t=253" target="_blank" rel="noopener noreferrer">
+link: <a href="https://youtu.be/tBKOb8Ib5nI?list=PLFIM0718LjIVEh_d-h5wAjsdv2W4SAtkx&t=253" target="_blank" rel="Link Pendahuluan 1">
   Klik di sini.
 </a>
 <br>
@@ -34,3 +34,32 @@ Menggunakan IP acces
 jadi di sini kita akan memainkan Url dengan Ip.
 <br>
 
+<h2>Membuat Aplikasi MVC dengan PHP #2 Persiapan</h2>
+Disini adalah penjelasan tentang Struktur Folder dan File2 apa saja yang akan di gunakan. 
+Struktur folder nya:
+<li>Public
+<li>Css</li>
+<li>Js</li>
+<li>img</li>
+</li>
+<li>App <small>Ini tidak akan di akses oleh user</small>
+<li>Core<small>Di sini adalah inti dari MVC nya<small></li>
+<li>Controller</li>
+<li>Views <small>Antarmuka sajian controller<small>
+<li>Home</li>
+<li>dll...</li>
+</li>
+</li>
+<hr>
+Options -Indexes -> adalah file pemblock agar user tidak bisa memasuki folder yang tida ada file index nya.
+
+Options -Multiviews adalah untuk menghindari kesahan ketika memanggil folder di dalam folder public ini.
+
+RewriteEngine On -> deklarasi menjalankan proses
+RewriteCond %{REQUEST_FILENAME} !-d -> jika ada reques tentang folder, maka akan di abaikan
+RewriteCond %{REQUEST_FILENAME} !-f -> jika ada reques tentang file, maka akan di abaikan
+RewriteRule ^(.*)$ index.php?url=$1 [L] -> adalah  
+Adalah untuk menulis ulang URL yang ada di browser
+^(.*)$ artinya :"ambil apapun di URL kecuali Enter"
+index.php?url=$1 artinya :"dan kirimkan ke $1"
+[L] artinya :"jika rule terpenuhi, maka jangan jalankan yang lain"
