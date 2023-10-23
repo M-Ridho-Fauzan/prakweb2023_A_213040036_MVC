@@ -39,16 +39,16 @@ Disini adalah penjelasan tentang Struktur Folder dan File2 apa saja yang akan di
 Struktur folder nya:
 <ul>
   <li>Public</li>
-  <ul>
-    <li>Css</li>
-    <li>Js</li>
-    <li>img</li>
-  </ul>
-  <li>App <small>Ini tidak akan di akses oleh user</small></li>
     <ul>
-      <li>Core<small>Di sini adalah inti dari MVC nya<small></li>
+      <li>Css</li>
+      <li>Js</li>
+      <li>img</li>
+    </ul>
+  <li>App <small>(Ini tidak akan di akses oleh user)</small></li>
+    <ul>
+      <li>Core <small>(Di sini adalah inti dari MVC nya)<small></li>
       <li>Controller</li>
-      <li>Views <small>Antarmuka sajian controller<small></li>
+      <li>Views <small>(Antarmuka sajian controller)<small></li>
       <ul>
         <li>Home</li>
         <li>dll...</li>
