@@ -30,27 +30,89 @@ class Mahasiswa_model
   // cara konek ke DB ini dengan driver VDO(Vxp Data Object)
   // agar bisa ganti Db sesuka hati
   // contoh PhpMyadmin ke 
-  private $dbh; // DataBase Handler
-  private $stmt;
+
+  private $table = 'mahasiswa';
+  private $dbh; // database handler
 
   public function __construct()
   {
-    // Data Source Name
-    $dsn = 'mysql:host=localhost;dbname=phpmvc';
-
-    try {
-      $this->dbh = new PDO($dsn, 'root', '');
-    } catch (PDOException $e) {
-      die($e->getMessage());
-    }
+    $this->dbh = new Database;
   }
 
   // method untung mengambil data di atas
   public function getAllMahasiswa()
   {
     // return $this->mhs;
-    $this->stmt = $this->dbh->prepare('SELECT * FROM mahasiswa');
-    $this->stmt->execute();
-    return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    $this->dbh->query('SELECT * FROM ' . $this->table);
+    return $this->dbh->resultSet();
+  }
+
+  // method untuk mengambil data mahasiswa berdasarkan id
+  public function getMahasiswaById($id)
+  {
+    $this->dbh->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+    $this->dbh->bind('id', $id);
+    return $this->dbh->single();
+  }
+
+  public function tambahDataMahasiswa($data)
+  {
+    $query = "INSERT INTO mahasiswa (nama, nrp, email, jurusan)
+              VALUES
+              (:nama, :nrp, :email, :jurusan)";
+
+    $this->dbh->query($query);
+    $this->dbh->bind('nama', $data['nama']);
+    $this->dbh->bind('nrp', $data['nrp']);
+    $this->dbh->bind('email', $data['email']);
+    $this->dbh->bind('jurusan', $data['jurusan']);
+
+    $this->dbh->execute();
+
+    return $this->dbh->rowCount();
+  }
+
+  public function hapusDataMahasiswa($id)
+  {
+    $query = "DELETE FROM mahasiswa WHERE id = :id";
+
+    $this->dbh->query($query);
+    $this->dbh->bind('id', (int)$id);
+
+    $this->dbh->execute();
+
+    return $this->dbh->rowCount();
+  }
+
+  public function ubahDataMahasiswa($data)
+  {
+    $query = "UPDATE mahasiswa SET
+              nama = :nama,
+              nrp = :nrp,
+              email = :email,
+              jurusan = :jurusan
+              WHERE id = :id
+            ";
+
+    $this->dbh->query($query);
+    $this->dbh->bind('nama', $data['nama']);
+    $this->dbh->bind('nrp', $data['nrp']);
+    $this->dbh->bind('email', $data['email']);
+    $this->dbh->bind('jurusan', $data['jurusan']);
+    $this->dbh->bind('id', $data['id']);
+
+    $this->dbh->execute();
+
+    return $this->dbh->rowCount();
+  }
+
+  public function cariDataMahasiswa()
+  {
+    $keyword = $_POST['keyword'];
+    $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword OR nrp LIKE :keyword OR email LIKE :keyword OR jurusan LIKE :keyword";
+
+    $this->dbh->query($query);
+    $this->dbh->bind('keyword', "%$keyword%");
+    return $this->dbh->resultSet();
   }
 }
