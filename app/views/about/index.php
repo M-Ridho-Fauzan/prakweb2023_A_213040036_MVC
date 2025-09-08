@@ -2,6 +2,7 @@
   <div class="text-center">
     <img src="<?= BASEURL; ?>/img/profile.jpg" width="200" alt="Foto Profil" class="img-thumbnail">
     <h1><?= $data['nama']; ?></h1>
+    <h6><?= $data['npm']; ?></h6>
     <p>Alamat Email: <?= $data['nama']; ?>@example.com</p>
   </div>
   <hr>

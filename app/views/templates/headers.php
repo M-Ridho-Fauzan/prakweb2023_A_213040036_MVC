@@ -31,9 +31,9 @@
             <a class="nav-link disable" style="cursor: no-drop;">+18</a>
           </li> -->
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+        <form class="d-flex" role="search" action="<?= BASEURL; ?>/mahasiswa/cari" method="post">
+          <input class="form-control me-2" type="search" placeholder="Cari Mahasiswa..." name="keyword" id="keyword" autocomplete="off">
+          <button class="btn btn-outline-dark" type="submit" id="tombolCari"><i class="bi bi-search"></i></button>
         </form>
       </div>
     </div>

@@ -3,7 +3,8 @@
 class About extends Controller
 {
   public function index(
-    $nama = 'Muhamad Ridho Fauzan',
+    $nama = 'Rendi Sopian',
+    $npm = '213040042',
     $pekerjaan = 'Fresh Graduate',
     $umur = 20
   ) {
@@ -11,6 +12,7 @@ class About extends Controller
     // echo "<hr>";
     // echo "Holla, my names is $nama, i'am is $pekerjaan";
     $data['nama'] = $nama;
+    $data['npm'] = $npm;
     $data['pekerjaan'] = $pekerjaan;
     $data['umur'] = $umur;
     $data['judul'] = 'About Me';
